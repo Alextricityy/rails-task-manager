@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+grid-4{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr
+
+}
+grid-item{
+  background-color: blue;
+}

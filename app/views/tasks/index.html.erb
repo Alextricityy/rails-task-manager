@@ -1,1 +1,17 @@
-<h1>hello</h1>
+<div class="container text-center">
+  <h1>Your tasks</h1>
+  <hr>
+  <div class="grid-4">
+    <% @tasks.each do |task| %>
+    <div class="grid-item">
+      <i class="<%= task.completed ? 'far fa-check-circle' : 'far fa-circle' %>"></i>
+      <h2 class="text-inline"><%= task.title.capitalize %></h2>
+      <p><%= task.details %></p>
+      <%= link_to "More Details", task_path(task)%>
+      <%= link_to "Edit", edit_task_path(task)%>
+      <%= link_to "Delete ", destroy_task_path(task), method: "delete"%>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "Add a new Task", "tasks/new" %>
+</div>
